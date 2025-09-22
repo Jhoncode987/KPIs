@@ -9,5 +9,5 @@
 ![PRs](https://img.shields.io/github/issues-pr/Jhoncode987/KPIs)
 
 ### Estado de releases
-![Release](https://img.shields.io/github/v/release/TU_USUARIO/demo-ci-kpis?include_prereleases)
+![Release](https://img.shields.io/github/v/release/Jhoncode987/KPIs?include_prereleases)
 
