@@ -2,7 +2,7 @@
 # Dashboard de PIs del equipo
 ### Estado del proyecto
 ![CI](https://github.com/Jhoncode987/KPIs/actions/workflows/ci.yml/badge.svg)
-[!\[Codecov](https://codecov.io/gh/Jhoncode987/KPIs/branch/main/graph/badge.svg)](https://codecov.io/gh/TU\_USUARIO/demo-ci-kpis)
+[!\[Codecov](https://codecov.io/gh/Jhoncode987/KPIs/branch/main/graph/badge.svg)](https://codecov.io/gh/Jhoncode987/KPIs)
 
 ###Actividad del repositorio
 ![Issues](https://img.shields.io/github/issues/Jhoncode987/KPIs)
