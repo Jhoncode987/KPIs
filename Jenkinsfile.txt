@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Compilando con Maven...'
+                sh 'mvn -B -V -DskipTests clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Ejecutando tests...'
+                sh 'mvn -B test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        stage('Coverage') {
+            steps {
+                echo 'Generando reporte JaCoCo...'
+                sh 'mvn -B verify'
+                publishHTML (target: [
+                  reportDir: 'target/site/jacoco',
+                  reportFiles: 'index.html',
+                  reportName: 'JaCoCo Coverage'
+                ])
+            }
+        }
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
+        }
+    }
+    post {
+        success { echo 'Build OK' }
+        failure { echo 'Build Falló' }
+    }
+}
